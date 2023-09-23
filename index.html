@@ -4,16 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WoW Loot Tracker</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Optional custom CSS for additional styling -->
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <h1>WoW Loot Tracker</h1>
-    <input type="text" id="playerName" placeholder="Enter Player Name">
-    <button onclick="searchPlayer()">Search</button>
-    
-    <table id="resultsTable">
-        <!-- The table content will be filled using JavaScript -->
-    </table>
+<body class="bg-dark text-white">
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">WoW Loot Tracker</h1>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="playerName" placeholder="Enter Player Name">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" onclick="searchPlayer()">Search</button>
+            </div>
+        </div>
+        
+        <table id="resultsTable" class="table table-dark table-striped">
+            <!-- The table content will be filled using JavaScript -->
+        </table>
+    </div>
 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
