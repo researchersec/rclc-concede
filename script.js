@@ -11,7 +11,9 @@ fetch('export.json')
     });
 
 function searchPlayer() {
-    const playerName = document.getElementById("playerName").value;
+    let playerName = document.getElementById("playerName").value;
+    playerName += "-Golemagg";  // Appending -Golemagg to the entered player name
+    
     const resultsTable = document.getElementById("resultsTable");
     
     // Filter data for the player
@@ -25,3 +27,4 @@ function searchPlayer() {
     
     resultsTable.innerHTML = tableContent;
 }
+
