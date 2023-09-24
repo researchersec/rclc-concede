@@ -50,7 +50,7 @@ tableContent += `<tr><td>${entry.date}</td><td>${wowheadLink}</td><td>${noteIcon
     $('#resultsTable').DataTable({
         "order": [[0, 'desc']]  // Sort by first column (Date) in descending order
     });
-    $('[data-toggle="tooltip"]').tooltip();
+    $('[data-toggle="tooltip"]').tooltip('show');
 }
 // Set up the Enter key event listener here, outside of the searchPlayer function
 document.getElementById("playerName").addEventListener("keyup", function(event) {
