@@ -32,13 +32,11 @@ function searchPlayer() {
     let tableContent = '';
 
     playerData.forEach(entry => {
-        console.log("Processing entry:", entry);  // Log the entire entry
-        console.log("Item ID:", entry.itemId);  // Log the itemId of the entry
-    
-        let itemId = entry.itemId ? entry.itemId.toString() : "117378";  // Ensure itemId is a string or use default value
-        let wowheadLink = `<a href="https://www.wowhead.com/item=${itemId}" data-wowhead="item=${itemId}" target="_blank">${entry.itemName}</a>`;
+        let itemID = entry.itemID ? entry.itemID.toString() : "117378";  // Ensure itemID is a string or use default value
+        let wowheadLink = `<a href="https://www.wowhead.com/item=${itemID}" data-wowhead="item=${itemID}" target="_blank">${entry.itemName}</a>`;
         tableContent += `<tr><td>${entry.date}</td><td>${wowheadLink}</td><td>${entry.votes}</td><td>${entry.instance}</td><td>${entry.boss}</td></tr>`;
 });
+
 
     $('#resultsTable tbody').html(tableContent);
 
