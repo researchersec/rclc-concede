@@ -22,9 +22,13 @@ function searchPlayer() {
     // Create table rows from the player data
     let tableContent = '<tr><th>Date</th><th>Item Name</th><th>Votes</th><th>Instance</th><th>Boss</th></tr>';
     playerData.forEach(entry => {
-        let wowheadLink = `<a href="https://www.wowhead.com/item=${entry.itemId}" target="_blank">${entry.itemName}</a>`;
-        tableContent += `<tr><td>${entry.date}</td><td>${wowheadLink}</td><td>${entry.votes}</td><td>${entry.instance}</td><td>${entry.boss}</td></tr>`;
-    });
+    let itemId = entry.itemId || "unknown";
+    let wowheadLink = itemId !== "unknown" 
+        ? `<a href="https://www.wowhead.com/item=${itemId}" target="_blank">${entry.itemName}</a>` 
+        : entry.itemName;  // If itemId is missing, just display the item name without a link
+    tableContent += `<tr><td>${entry.date}</td><td>${wowheadLink}</td><td>${entry.votes}</td><td>${entry.instance}</td><td>${entry.boss}</td></tr>`;
+});
+
     
     resultsTable.innerHTML = tableContent;
 
