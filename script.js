@@ -33,7 +33,7 @@ function searchPlayer() {
 
     playerData.forEach(entry => {
         let itemID = entry.itemID ? entry.itemID.toString() : "117378";  // Ensure itemID is a string or use default value
-        let wowheadLink = `<a href="https://www.wowhead.com/item=${itemID}" data-wowhead="item=${itemID}" target="_blank">${entry.itemName}</a>`;
+        let wowheadLink = `<a href="https://www.wowhead.com/wotlk/item=${itemID}" data-wowhead="item=${itemID}" target="_blank">${entry.itemName}</a>`;
         tableContent += `<tr><td>${entry.date}</td><td>${wowheadLink}</td><td>${entry.votes}</td><td>${entry.instance}</td><td>${entry.boss}</td></tr>`;
 });
 
