@@ -24,20 +24,14 @@ function searchPlayer() {
     // Filter data for the player
     const playerData = data.filter(entry => entry.player === playerName);
 
-    // Create table rows from the player data
-    console.log("First 5 data entries:", data.slice(0, 5));  // Log the first 5 entries of the entire data
+    // Ensure tableContent is initialized before the loop
+    let tableContent = '<tr><th>Date</th><th>Item Name</th><th>Votes</th><th>Instance</th><th>Boss</th></tr>';
 
     playerData.forEach(entry => {
         let itemId = entry.itemId ? entry.itemId.toString() : "117378";  // Ensure itemId is a string or use default value
         let wowheadLink = `<a href="https://www.wowhead.com/item=${itemId}" data-wowhead="item=${itemId}" target="_blank">${entry.itemName}</a>`;
-        
-        console.log("Processing entry:", entry);
-        console.log("Generated itemId:", itemId);
-        console.log("Generated wowheadLink:", wowheadLink);
-        
         tableContent += `<tr><td>${entry.date}</td><td>${wowheadLink}</td><td>${entry.votes}</td><td>${entry.instance}</td><td>${entry.boss}</td></tr>`;
     });
-
     
     resultsTable.innerHTML = tableContent;
 
