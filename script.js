@@ -27,10 +27,11 @@ function searchPlayer() {
     // Create table rows from the player data
     let tableContent = '<tr><th>Date</th><th>Item Name</th><th>Votes</th><th>Instance</th><th>Boss</th></tr>';
     playerData.forEach(entry => {
-        let itemId = entry.itemId || "117378";  // Use default itemId if it's undefined or falsy
+        let itemId = entry.itemId ? entry.itemId.toString() : "117378";  // Ensure itemId is a string or use default value
         let wowheadLink = `<a href="https://www.wowhead.com/item=${itemId}" data-wowhead="item=${itemId}" target="_blank">${entry.itemName}</a>`;
         tableContent += `<tr><td>${entry.date}</td><td>${wowheadLink}</td><td>${entry.votes}</td><td>${entry.instance}</td><td>${entry.boss}</td></tr>`;
-    });
+});
+
     
     resultsTable.innerHTML = tableContent;
 
