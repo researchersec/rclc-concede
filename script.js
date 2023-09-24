@@ -19,6 +19,10 @@ function searchPlayer() {
     let playerName = document.getElementById("playerName").value;
     playerName += "-Golemagg";  // Appending -Golemagg to the entered player name
 
+    // Filter data temp fix
+    const playerData = data.filter(entry => entry.player === playerName);
+
+
     // Resetting the DataTable and table content
     if ($.fn.dataTable.isDataTable('#resultsTable')) {
         $('#resultsTable').DataTable().destroy();
