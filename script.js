@@ -49,7 +49,7 @@ function searchPlayer() {
 
     // Initialize the DataTable with date sorting
     $('#resultsTable').DataTable({
-        "order": [[0, 'desc']], // Sort by the first column (sortableDate) in descending order
+        "order": [[0, 'asc']], // Sort by the first column (sortableDate) in descending order
         "columnDefs": [
             { "type": "date", "targets": 0 } // Specify that the first column contains dates
         ]
