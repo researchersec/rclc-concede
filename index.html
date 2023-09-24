@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WoW Loot Tracker</title>
+    
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- DataTables CSS (Bootstrap 4 version) -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/dataTables.bootstrap4.min.css">
+    
     <!-- Optional custom CSS for additional styling -->
     <link rel="stylesheet" href="styles.css">
 </head>
 <body class="bg-dark text-white">
     <div class="container mt-5">
-        <h1 class="text-center mb-4">WoW Loot Tracker</h1>
+        <h1 class="text-center mb-4">Concede Loot Tracker</h1>
         <div class="input-group mb-3">
             <input type="text" class="form-control" id="playerName" placeholder="Enter Player Name">
             <div class="input-group-append">
@@ -20,13 +25,29 @@
         </div>
         
         <table id="resultsTable" class="table table-dark table-striped">
-            <!-- The table content will be filled using JavaScript -->
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Item Name</th>
+                    <th>Votes</th>
+                    <th>Instance</th>
+                    <th>Boss</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- The table content will be filled using JavaScript -->
+            </tbody>
         </table>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <!-- DataTables JS and its Bootstrap 4 integration -->
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/dataTables.bootstrap4.min.js"></script>
+    
     <script src="script.js"></script>
 </body>
 </html>
