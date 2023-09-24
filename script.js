@@ -44,8 +44,9 @@ function searchPlayer() {
     $('#resultsTable').DataTable({
         "order": [[0, 'desc']]  // Sort by first column (Date) in descending order
     });
-
-    document.getElementById("playerName").addEventListener("keyup", function(event) {
+}
+// Set up the Enter key event listener here, outside of the searchPlayer function
+document.getElementById("playerName").addEventListener("keyup", function(event) {
     // Number 13 is the "Enter" key on the keyboard
     if (event.keyCode === 13) {
         // Cancel the default action (if any)
@@ -54,5 +55,3 @@ function searchPlayer() {
         searchPlayer();
     }
 });
-
-}
