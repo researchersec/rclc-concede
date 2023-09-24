@@ -37,6 +37,8 @@ function searchPlayer() {
 
     // Initialize the DataTable and set default sorting
     $('#resultsTable').DataTable({
-        "order": [[0, 'desc']]  // Sort by first column (Date) in descending order
+        "order": [[0, 'desc']],  // Sort by first column (Date) in descending order
+        "destroy": true  // Destroy any existing table instance before reinitializing
     });
+
 }
