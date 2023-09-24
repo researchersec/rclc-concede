@@ -22,9 +22,14 @@ function searchPlayer() {
     // Create table rows from the player data
     let tableContent = '<tr><th>Date</th><th>Item Name</th><th>Votes</th><th>Instance</th><th>Boss</th></tr>';
     playerData.forEach(entry => {
-        tableContent += `<tr><td>${entry.date}</td><td>${entry.itemName}</td><td>${entry.votes}</td><td>${entry.instance}</td><td>${entry.boss}</td></tr>`;
+        let wowheadLink = `<a href="https://www.wowhead.com/item=${entry.itemId}" target="_blank">${entry.itemName}</a>`;
+        tableContent += `<tr><td>${entry.date}</td><td>${wowheadLink}</td><td>${entry.votes}</td><td>${entry.instance}</td><td>${entry.boss}</td></tr>`;
     });
     
     resultsTable.innerHTML = tableContent;
-}
 
+    // Initialize the DataTable and set default sorting
+    $('#resultsTable').DataTable({
+        "order": [[0, 'desc']]  // Sort by first column (Date) in descending order
+    });
+}
