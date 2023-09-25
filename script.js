@@ -72,7 +72,11 @@ document.getElementById("playerName").addEventListener("keyup", function(event) 
 function convertToSortableDate(inputDate) {
     const parts = inputDate.split('/');
     if (parts.length === 3) {
-        return `${parts[2]}-${parts[1]}-${parts[0]}`;
+        const year = parts[2].padStart(4, '20'); // assuming the year is in 2000s
+        const month = parts[1].padStart(2, '0');
+        const day = parts[0].padStart(2, '0');
+        return `${year}-${month}-${day}`;
     }
     return inputDate;
 }
+
